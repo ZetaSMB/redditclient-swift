@@ -14,6 +14,11 @@
 		DFC6157C22E34C4D00007687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC6157B22E34C4D00007687 /* Assets.xcassets */; };
 		DFC6157F22E34C4D00007687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC6157D22E34C4D00007687 /* LaunchScreen.storyboard */; };
 		DFC6158A22E34C4D00007687 /* RedditClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6158922E34C4D00007687 /* RedditClientTests.swift */; };
+		DFC6159922E3508F00007687 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6159822E3508F00007687 /* Link.swift */; };
+		DFC6159B22E3542500007687 /* ReeditAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6159A22E3542500007687 /* ReeditAPIProtocol.swift */; };
+		DFC6159D22E354D500007687 /* ListingRspDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6159C22E354D500007687 /* ListingRspDTO.swift */; };
+		DFC6159F22E3580B00007687 /* ReeditAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6159E22E3580B00007687 /* ReeditAPIRepository.swift */; };
+		DFC615A122E3593000007687 /* ReeditAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615A022E3593000007687 /* ReeditAPIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		DFC6158522E34C4D00007687 /* RedditClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC6158922E34C4D00007687 /* RedditClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditClientTests.swift; sourceTree = "<group>"; };
 		DFC6158B22E34C4D00007687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFC6159822E3508F00007687 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		DFC6159A22E3542500007687 /* ReeditAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReeditAPIProtocol.swift; sourceTree = "<group>"; };
+		DFC6159C22E354D500007687 /* ListingRspDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRspDTO.swift; sourceTree = "<group>"; };
+		DFC6159E22E3580B00007687 /* ReeditAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReeditAPIRepository.swift; sourceTree = "<group>"; };
+		DFC615A022E3593000007687 /* ReeditAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReeditAPIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				DFC6157222E34C4B00007687 /* AppDelegate.swift */,
-				DFC6157422E34C4B00007687 /* MasterViewController.swift */,
-				DFC6157622E34C4B00007687 /* DetailViewController.swift */,
-				DFC6157822E34C4B00007687 /* Main.storyboard */,
+				DFC6159722E3508000007687 /* Models */,
+				DFC6159422E34F5700007687 /* Extensions */,
+				DFC6159622E3505500007687 /* ViewControllers */,
+				DFC6159522E3504A00007687 /* Services */,
 				DFC6157B22E34C4D00007687 /* Assets.xcassets */,
 				DFC6157D22E34C4D00007687 /* LaunchScreen.storyboard */,
 				DFC6158022E34C4D00007687 /* Info.plist */,
@@ -97,6 +108,50 @@
 				DFC6158B22E34C4D00007687 /* Info.plist */,
 			);
 			path = RedditClientTests;
+			sourceTree = "<group>";
+		};
+		DFC6159422E34F5700007687 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DFC6159522E3504A00007687 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DFC615A222E3696A00007687 /* ReeditAPI */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DFC6159622E3505500007687 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6157422E34C4B00007687 /* MasterViewController.swift */,
+				DFC6157622E34C4B00007687 /* DetailViewController.swift */,
+				DFC6157822E34C4B00007687 /* Main.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DFC6159722E3508000007687 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6159822E3508F00007687 /* Link.swift */,
+				DFC6159C22E354D500007687 /* ListingRspDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFC615A222E3696A00007687 /* ReeditAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6159A22E3542500007687 /* ReeditAPIProtocol.swift */,
+				DFC6159E22E3580B00007687 /* ReeditAPIRepository.swift */,
+				DFC615A022E3593000007687 /* ReeditAPIRequest.swift */,
+			);
+			path = ReeditAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC6159D22E354D500007687 /* ListingRspDTO.swift in Sources */,
+				DFC615A122E3593000007687 /* ReeditAPIRequest.swift in Sources */,
+				DFC6159F22E3580B00007687 /* ReeditAPIRepository.swift in Sources */,
 				DFC6157722E34C4B00007687 /* DetailViewController.swift in Sources */,
+				DFC6159B22E3542500007687 /* ReeditAPIProtocol.swift in Sources */,
 				DFC6157522E34C4B00007687 /* MasterViewController.swift in Sources */,
 				DFC6157322E34C4B00007687 /* AppDelegate.swift in Sources */,
+				DFC6159922E3508F00007687 /* Link.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

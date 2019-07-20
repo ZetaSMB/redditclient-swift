@@ -5,7 +5,34 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>514A32F1-6FEC-4E2B-896F-CAE582A61918</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>514A32F1-6FEC-4E2B-896F-CAE582A61918.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>RedditClient-cvxdgkffpfwtrwcxgumoawhaxlfi</string>
+			<key>timeStartedRecording</key>
+			<real>585330026.38650501</real>
+			<key>timeStoppedRecording</key>
+			<real>585330028.32983398</real>
+			<key>title</key>
+			<string>Build target RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>514A32F1-6FEC-4E2B-896F-CAE582A61918</string>
+		</dict>
+	</dict>
 	<key>preserveOldLogs</key>
 	<true/>
 </dict>
