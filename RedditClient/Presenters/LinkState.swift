@@ -14,5 +14,5 @@ struct LinkState : Codable, Equatable {
     }
     
     var link: Link
-    var read: Bool = false
+    var read: Bool = false    
 }

@@ -10,31 +10,28 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    @IBOutlet weak var mainImgView: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var authorLbl: UILabel!
+    
+    var detailItem: LinkState?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
+    
     func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
+        if let linkState = detailItem {
+            authorLbl.text = linkState.link.author ?? ""
+            titleLbl.text = linkState.link.title ?? ""
+            if let thumbnailUrl = linkState.link.thumbnail {
+                mainImgView.setImage(from: thumbnailUrl)
+            } else {
+                mainImgView.image = nil
             }
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        configureView()
-    }
-
-    var detailItem: NSDate? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
-
 
 }
 

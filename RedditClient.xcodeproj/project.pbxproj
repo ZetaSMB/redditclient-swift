@@ -21,6 +21,10 @@
 		DFC615A122E3593000007687 /* ReeditAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615A022E3593000007687 /* ReeditAPIRequest.swift */; };
 		DFC615A522E372E500007687 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615A422E372E500007687 /* ListingPresenter.swift */; };
 		DFC615A722E3759C00007687 /* LinkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615A622E3759C00007687 /* LinkState.swift */; };
+		DFC615AA22E391CE00007687 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615A922E391CE00007687 /* LinkCell.swift */; };
+		DFC615AC22E394F800007687 /* Date+TimeAgoDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615AB22E394F800007687 /* Date+TimeAgoDescription.swift */; };
+		DFC615AE22E396ED00007687 /* UIImageVIew+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615AD22E396ED00007687 /* UIImageVIew+URL.swift */; };
+		DFC615B022E3B4E100007687 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615AF22E3B4E100007687 /* LoadingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		DFC615A022E3593000007687 /* ReeditAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReeditAPIRequest.swift; sourceTree = "<group>"; };
 		DFC615A422E372E500007687 /* ListingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPresenter.swift; sourceTree = "<group>"; };
 		DFC615A622E3759C00007687 /* LinkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkState.swift; sourceTree = "<group>"; };
+		DFC615A922E391CE00007687 /* LinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
+		DFC615AB22E394F800007687 /* Date+TimeAgoDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgoDescription.swift"; sourceTree = "<group>"; };
+		DFC615AD22E396ED00007687 /* UIImageVIew+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageVIew+URL.swift"; sourceTree = "<group>"; };
+		DFC615AF22E3B4E100007687 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,8 @@
 		DFC6159422E34F5700007687 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DFC615AB22E394F800007687 /* Date+TimeAgoDescription.swift */,
+				DFC615AD22E396ED00007687 /* UIImageVIew+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +146,7 @@
 				DFC6157422E34C4B00007687 /* MasterViewController.swift */,
 				DFC6157622E34C4B00007687 /* DetailViewController.swift */,
 				DFC6157822E34C4B00007687 /* Main.storyboard */,
+				DFC615A822E391AE00007687 /* TableViewCells */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,6 +177,15 @@
 				DFC615A622E3759C00007687 /* LinkState.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		DFC615A822E391AE00007687 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DFC615A922E391CE00007687 /* LinkCell.swift */,
+				DFC615AF22E3B4E100007687 /* LoadingCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,10 +292,14 @@
 				DFC6159D22E354D500007687 /* ListingRspDTO.swift in Sources */,
 				DFC615A122E3593000007687 /* ReeditAPIRequest.swift in Sources */,
 				DFC6159F22E3580B00007687 /* ReeditAPIRepository.swift in Sources */,
+				DFC615AC22E394F800007687 /* Date+TimeAgoDescription.swift in Sources */,
+				DFC615B022E3B4E100007687 /* LoadingCell.swift in Sources */,
 				DFC6157722E34C4B00007687 /* DetailViewController.swift in Sources */,
 				DFC6159B22E3542500007687 /* ReeditAPIProtocol.swift in Sources */,
 				DFC615A522E372E500007687 /* ListingPresenter.swift in Sources */,
 				DFC6157522E34C4B00007687 /* MasterViewController.swift in Sources */,
+				DFC615AA22E391CE00007687 /* LinkCell.swift in Sources */,
+				DFC615AE22E396ED00007687 /* UIImageVIew+URL.swift in Sources */,
 				DFC615A722E3759C00007687 /* LinkState.swift in Sources */,
 				DFC6157322E34C4B00007687 /* AppDelegate.swift in Sources */,
 				DFC6159922E3508F00007687 /* Link.swift in Sources */,

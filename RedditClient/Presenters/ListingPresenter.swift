@@ -8,26 +8,20 @@
 
 import Foundation
 
-protocol ListingPresenterDelegateActions {
-    var onMustReload: (([LinkState]) ->())? { get set }
-    var onMustShowError: ((Error) ->())? { get set }
+protocol ListingPresenter {
+    func fetchData(onSuccess: (([LinkState]) ->())?, onError:((Error) ->())?);
+    func loadMore(onSuccess: (([LinkState]) ->())?, onError:((Error) ->())?);
+    func refreshData(onSuccess: (([LinkState]) ->())?, onError:((Error) ->())?);
     var listingData: [LinkState] { get }
-}
-
-protocol ListingPresenterInputActions {
-    func fetchData();
-    func loadMore();
+    var isFetchingData: Bool { get }
     func markAsRead(linkItem: LinkState);
     func removeFromList(linkItem: LinkState);
 }
 
-class TopListPresenter : ListingPresenterDelegateActions & ListingPresenterInputActions {
-    
-    var onMustReload: (([LinkState]) -> ())? = nil
-    
-    var onMustShowError: ((Error) -> ())? = nil
+class TopListPresenter : ListingPresenter {
     
     private(set) var listingData: [LinkState] = []
+    private(set) var isFetchingData: Bool = false
     
     fileprivate var after: String?
     fileprivate var before: String?
@@ -39,12 +33,69 @@ class TopListPresenter : ListingPresenterDelegateActions & ListingPresenterInput
          self.redditAPIService = redditAPIService
     }
     
-    func fetchData() {
-        fetchDataWithAction(.insertAtBegining)
+    func fetchData(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
+        isFetchingData = true;
+        redditAPIService
+            .fetchListing(by: RDTAPIListingType.top,
+                          count: pageSize,
+                          before: nil,
+                          after: nil,
+                          successHandler: { [unowned self] (ListingRspDTO) in
+                            self.isFetchingData = false;
+                            self.listingData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
+                            self.after = ListingRspDTO.data.after
+                            self.before = ListingRspDTO.data.before
+                            guard let onSuccess = onSuccess else { return }
+                            onSuccess(self.listingData)
+                        },
+                          errorHandler: { (error) in
+                            self.isFetchingData = false;
+                            guard let onError = onError else { return }
+                            onError(error)
+            })
     }
     
-    func loadMore() {
-       fetchDataWithAction(.append)
+    func loadMore(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
+        isFetchingData = true;
+        redditAPIService
+            .fetchListing(by: RDTAPIListingType.top,
+                          count: pageSize,
+                          before: nil,
+                          after: self.after,
+                          successHandler: { [unowned self] (ListingRspDTO) in
+                            self.isFetchingData = false;
+                            let newData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
+                            self.after = ListingRspDTO.data.after
+                            self.listingData.append(contentsOf: newData)
+                            guard let onSuccess = onSuccess else { return }
+                            onSuccess(newData)
+                         },
+                          errorHandler: { (error) in
+                            self.isFetchingData = false;
+                            guard let onError = onError else { return }
+                            onError(error)
+            })
+    }
+    
+    func refreshData(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
+        redditAPIService
+            .fetchListing(by: RDTAPIListingType.top,
+                          count: pageSize,
+                          before: self.before,
+                          after: nil,
+                          successHandler: { [unowned self] (ListingRspDTO) in
+                            self.isFetchingData = false;
+                            let newData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
+                            self.before = ListingRspDTO.data.before
+                            self.listingData.insert(contentsOf: newData, at: 0)
+                            guard let onSuccess = onSuccess else { return }
+                            onSuccess(newData)
+                          },
+                          errorHandler: { (error) in
+                            self.isFetchingData = false;
+                            guard let onError = onError else { return }
+                            onError(error)
+                        })
     }
     
     func markAsRead(linkItem: LinkState) {
@@ -57,38 +108,6 @@ class TopListPresenter : ListingPresenterDelegateActions & ListingPresenterInput
         if let idx = listingData.firstIndex(where: { $0 == linkItem }) {
             listingData.remove(at: idx)
         }
-    }
-    
-    fileprivate enum DataAction {
-        case insertAtBegining
-        case append
-    }
-    
-    private func fetchDataWithAction(_ action: DataAction) {
-        redditAPIService
-            .fetchListing(by: RDTAPIListingType.top,
-                          count: pageSize,
-                          before: self.before,
-                          after: self.after,
-                          successHandler: { [unowned self] (ListingRspDTO) in
-                            let newData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
-                            switch action {
-                                case .insertAtBegining: do {
-                                    self.listingData.insert(contentsOf: newData, at: 0)
-                                }
-                                case .append: do {
-                                    self.listingData.append(contentsOf: newData)
-                                }
-                            }
-                            self.after = ListingRspDTO.data.after
-                            self.before = ListingRspDTO.data.before
-                            guard let completionHandler = self.onMustReload else { return }
-                            completionHandler(self.listingData)
-                },
-                          errorHandler: { (error) in
-                            guard let completionHandler = self.onMustShowError else { return }
-                            completionHandler(error)
-            })
     }
     
 }
