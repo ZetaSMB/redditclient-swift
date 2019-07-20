@@ -21,17 +21,30 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
+        self.refresh(self)
+    }
+    
+    func configureTableView() {
+        refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refresh(_ sender: Any) {
         listingPresenter.fetchData(onSuccess: { [unowned self] _ in
+                self.refreshControl?.endRefreshing()
                 self.tableView.reloadData()
             },
-                                   onError: { [unowned self] (error) in
-                self.showFetchError(error)
-            })
+                                     onError:{ [unowned self] (error) in
+                                        self.refreshControl?.endRefreshing()
+                                        self.showFetchError(error)
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +100,11 @@ class MasterViewController: UITableViewController {
                     let startIndex = self.listingPresenter.listingData.count - newData.count
                     let endIndex = startIndex + newData.count
                     let indexesToAdd = Array(startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
-                    self.tableView.insertRows(at:indexesToAdd, with: UITableView.RowAnimation.fade)
+                    self.tableView.performBatchUpdates({
+                        self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)
+                        self.tableView.insertRows(at:indexesToAdd, with: UITableView.RowAnimation.fade)
+                    }, completion: nil)
+                    
                 },
                                       onError:
                 { [unowned self] (error) in

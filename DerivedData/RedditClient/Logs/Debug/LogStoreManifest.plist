@@ -230,6 +230,38 @@
 			<key>uniqueIdentifier</key>
 			<string>34DCAD72-DA77-4240-BC70-FEF6B32222DE</string>
 		</dict>
+		<key>36833236-E7C9-4C21-91D3-3CE9BDAB04BB</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>36833236-E7C9-4C21-91D3-3CE9BDAB04BB.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585348520.26671398</real>
+			<key>timeStoppedRecording</key>
+			<real>585349357.11306202</real>
+			<key>title</key>
+			<string>Debug RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>36833236-E7C9-4C21-91D3-3CE9BDAB04BB</string>
+		</dict>
 		<key>3BFAEF7E-873D-4396-8DB3-2A05FE7BE3CD</key>
 		<dict>
 			<key>className</key>
@@ -389,6 +421,38 @@
 			<string>Debug RedditClient</string>
 			<key>uniqueIdentifier</key>
 			<string>43A6F409-1B1D-48F4-B57A-F43F5888301F</string>
+		</dict>
+		<key>4E95B48D-6C01-4F71-A9C7-A6110064E5CD</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>4E95B48D-6C01-4F71-A9C7-A6110064E5CD.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585349359.43654394</real>
+			<key>timeStoppedRecording</key>
+			<real>585349405.01854205</real>
+			<key>title</key>
+			<string>Debug RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>4E95B48D-6C01-4F71-A9C7-A6110064E5CD</string>
 		</dict>
 		<key>56BC9C01-0AB0-4080-A613-1838181062CB</key>
 		<dict>
@@ -582,6 +646,38 @@
 			<key>uniqueIdentifier</key>
 			<string>7EEC84E1-A907-481A-8A2B-D50FC7EEFB01</string>
 		</dict>
+		<key>84FEE9A2-3043-4FA2-9805-563DC3F98DB5</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>84FEE9A2-3043-4FA2-9805-563DC3F98DB5.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585349406.67422295</real>
+			<key>timeStoppedRecording</key>
+			<real>585349466.06503999</real>
+			<key>title</key>
+			<string>Debug RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>84FEE9A2-3043-4FA2-9805-563DC3F98DB5</string>
+		</dict>
 		<key>9447101C-5176-414E-9E2B-BA47E73E0541</key>
 		<dict>
 			<key>className</key>
@@ -613,6 +709,38 @@
 			<string>Debug RedditClient</string>
 			<key>uniqueIdentifier</key>
 			<string>9447101C-5176-414E-9E2B-BA47E73E0541</string>
+		</dict>
+		<key>9473D653-4D1F-48D8-BC48-4A71A34A8BF2</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>9473D653-4D1F-48D8-BC48-4A71A34A8BF2.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585349895.156183</real>
+			<key>timeStoppedRecording</key>
+			<real>585349931.50832999</real>
+			<key>title</key>
+			<string>Debug RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>9473D653-4D1F-48D8-BC48-4A71A34A8BF2</string>
 		</dict>
 		<key>9F6DEE07-C454-4058-8C54-E8DF9EB9C4F3</key>
 		<dict>
@@ -1126,6 +1254,38 @@
 			<key>uniqueIdentifier</key>
 			<string>D09133FF-91C2-42D2-BE72-5440985639CE</string>
 		</dict>
+		<key>D3E0F6EC-F356-405B-9E2B-4B4DBBB6815F</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>D3E0F6EC-F356-405B-9E2B-4B4DBBB6815F.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585349825.16449296</real>
+			<key>timeStoppedRecording</key>
+			<real>585349893.74134505</real>
+			<key>title</key>
+			<string>Debug RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>D3E0F6EC-F356-405B-9E2B-4B4DBBB6815F</string>
+		</dict>
 		<key>DACEEBA3-090F-4952-AD41-1EA3B9664875</key>
 		<dict>
 			<key>className</key>
@@ -1317,6 +1477,38 @@
 			<string>Debug RedditClient</string>
 			<key>uniqueIdentifier</key>
 			<string>EDA0DDCD-03E9-4EBB-BD65-2E43258A8FDE</string>
+		</dict>
+		<key>F029A736-E2D6-488C-864E-C496B296BA58</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F029A736-E2D6-488C-864E-C496B296BA58.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585349465.93261695</real>
+			<key>timeStoppedRecording</key>
+			<real>585349787.94557202</real>
+			<key>title</key>
+			<string>Debug RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>F029A736-E2D6-488C-864E-C496B296BA58</string>
 		</dict>
 		<key>F89CBF3F-8AF2-4616-839F-336510427D0F</key>
 		<dict>

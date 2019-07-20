@@ -11,7 +11,6 @@ import Foundation
 protocol ListingPresenter {
     func fetchData(onSuccess: (([LinkState]) ->())?, onError:((Error) ->())?);
     func loadMore(onSuccess: (([LinkState]) ->())?, onError:((Error) ->())?);
-    func refreshData(onSuccess: (([LinkState]) ->())?, onError:((Error) ->())?);
     var listingData: [LinkState] { get }
     var isFetchingData: Bool { get }
     func markAsRead(linkItem: LinkState);
@@ -25,7 +24,7 @@ class TopListPresenter : ListingPresenter {
     
     fileprivate var after: String?
     fileprivate var before: String?
-    fileprivate var pageSize: Int? = 25
+    fileprivate var pageSize: Int? = 5
     
     private var redditAPIService: RDTAPIService!
     
@@ -75,27 +74,6 @@ class TopListPresenter : ListingPresenter {
                             guard let onError = onError else { return }
                             onError(error)
             })
-    }
-    
-    func refreshData(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
-        redditAPIService
-            .fetchListing(by: RDTAPIListingType.top,
-                          count: pageSize,
-                          before: self.before,
-                          after: nil,
-                          successHandler: { [unowned self] (ListingRspDTO) in
-                            self.isFetchingData = false;
-                            let newData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
-                            self.before = ListingRspDTO.data.before
-                            self.listingData.insert(contentsOf: newData, at: 0)
-                            guard let onSuccess = onSuccess else { return }
-                            onSuccess(newData)
-                          },
-                          errorHandler: { (error) in
-                            self.isFetchingData = false;
-                            guard let onError = onError else { return }
-                            onError(error)
-                        })
     }
     
     func markAsRead(linkItem: LinkState) {
