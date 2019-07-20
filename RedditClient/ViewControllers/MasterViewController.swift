@@ -64,6 +64,8 @@ class MasterViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = listingPresenter.listingData[indexPath.row]
+                listingPresenter.markAsRead(linkItem: controller.detailItem!)
+                self.tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -104,7 +106,6 @@ class MasterViewController: UITableViewController {
                         self.tableView.setContentOffset(self.tableView.contentOffset, animated: false)
                         self.tableView.insertRows(at:indexesToAdd, with: UITableView.RowAnimation.fade)
                     }, completion: nil)
-                    
                 },
                                       onError:
                 { [unowned self] (error) in

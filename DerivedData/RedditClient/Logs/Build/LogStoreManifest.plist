@@ -1894,6 +1894,38 @@
 			<key>uniqueIdentifier</key>
 			<string>ACE67CD2-BC49-41CF-9057-3CD901C262C8</string>
 		</dict>
+		<key>B35BC150-ACE8-495C-B75E-02ABD71F7F23</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B35BC150-ACE8-495C-B75E-02ABD71F7F23.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585350272.98481095</real>
+			<key>timeStoppedRecording</key>
+			<real>585350274.90873003</real>
+			<key>title</key>
+			<string>Build RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>B35BC150-ACE8-495C-B75E-02ABD71F7F23</string>
+		</dict>
 		<key>B592977A-CA76-4D6B-BD57-A772932D9D26</key>
 		<dict>
 			<key>className</key>
@@ -2277,6 +2309,38 @@
 			<string>Build RedditClient</string>
 			<key>uniqueIdentifier</key>
 			<string>E097B617-99E8-4594-AB3F-61E6D3F21EC9</string>
+		</dict>
+		<key>E3852812-64FF-47BB-A6E5-55C26BA43271</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E3852812-64FF-47BB-A6E5-55C26BA43271.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585350316.11382103</real>
+			<key>timeStoppedRecording</key>
+			<real>585350318.16966701</real>
+			<key>title</key>
+			<string>Build RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>E3852812-64FF-47BB-A6E5-55C26BA43271</string>
 		</dict>
 		<key>E7A43A13-964D-49E5-817E-193EB5214AB0</key>
 		<dict>
