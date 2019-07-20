@@ -14,7 +14,7 @@ protocol ListingPresenter {
     var listingData: [LinkState] { get }
     var isFetchingData: Bool { get }
     func markAsRead(linkItem: LinkState);
-    func removeFromList(linkItem: LinkState);
+    func removeFromList(linkItem: LinkState) -> Int;
 }
 
 class TopListPresenter : ListingPresenter {
@@ -82,11 +82,16 @@ class TopListPresenter : ListingPresenter {
         }
     }
     
-    func removeFromList(linkItem: LinkState) {
+    func removeFromList(linkItem: LinkState) -> Int {
         if let idx = listingData.firstIndex(where: { $0 == linkItem }) {
             listingData.remove(at: idx)
+            return idx
         }
+        return -1
     }
     
+    func removeAll() {
+        listingData = []
+    }
 }
 

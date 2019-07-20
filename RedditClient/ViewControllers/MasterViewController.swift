@@ -56,7 +56,13 @@ class MasterViewController: UITableViewController {
         //TODO:
     }
 
-
+    private func dismissItem(_ item: LinkState) {
+        let idx = self.listingPresenter.removeFromList(linkItem: item)
+        if idx >= 0 {
+            self.tableView.deleteRows(at: [IndexPath(row: idx, section: 0) ], with: .left)
+        }
+    }
+    
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,12 +71,13 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = listingPresenter.listingData[indexPath.row]
                 listingPresenter.markAsRead(linkItem: controller.detailItem!)
-                self.tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+                self.tableView.reloadRows(at: [indexPath], with: .none)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
+    
 
     // MARK: - Table View
 
@@ -87,9 +94,11 @@ class MasterViewController: UITableViewController {
             return tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath)
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LinkCell", for: indexPath) as! LinkCell
-            cell.configure(with: listingPresenter.listingData[indexPath.row]) {
-                //complete
-            }
+            let linkData = listingPresenter.listingData[indexPath.row]
+            cell.configure(with: linkData,
+                           onPressBtnAction: { [unowned self] () in
+                            self.dismissItem(linkData)
+            })
             return cell
         }
     }

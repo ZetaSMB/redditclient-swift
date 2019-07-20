@@ -21,7 +21,8 @@ class LinkCell: UITableViewCell {
     
     var onPressBtnHandler: (() -> ())?
     
-    public func configure(with linkState: LinkState, onPressBtnAction: (() -> ())?) {
+    public func configure(with linkState: LinkState, onPressBtnAction: @escaping (() -> ())) {
+        onPressBtnHandler = onPressBtnAction
         readStatusView.isHidden = linkState.read
         authorLbl.text = linkState.link.author ?? ""
         createdLbl.text = linkState.link.createdDate?.timeAgoDescription() ?? ""
