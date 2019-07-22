@@ -53,7 +53,13 @@ class MasterViewController: UITableViewController {
     }
     
     private func showFetchError(_ error : Error) {
-        //TODO:
+        let alert = UIAlertController(title: "Oops, has been an error fetching data",
+                                      message: "Error details: " + error.localizedDescription,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     private func dismissItem(_ item: LinkState) {
@@ -62,7 +68,6 @@ class MasterViewController: UITableViewController {
             tableView.deleteRows(at: [IndexPath(row: idx, section: 0) ], with: .left)
         }
     }
-    
     
     @IBAction private func onDismissAllPressed(_ sender: Any) {
         for aLink in listingPresenter.listingData {
