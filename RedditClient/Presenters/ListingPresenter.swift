@@ -26,11 +26,12 @@ class TopListPresenter : ListingPresenter {
     fileprivate var before: String?
     fileprivate var pageSize: Int? = 50
     
-
+    fileprivate var alreadyReadLinksIds: Set<String> = { Set<String>() }()
+    
     private var redditAPIService: RDTAPIService!
     
     public init(_ redditAPIService: RDTAPIService ) {
-         self.redditAPIService = redditAPIService
+        self.redditAPIService = redditAPIService
     }
     
     public func fetchData(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
@@ -42,12 +43,14 @@ class TopListPresenter : ListingPresenter {
                           after: nil,
                           successHandler: { [unowned self] (ListingRspDTO) in
                             self.isFetchingData = false;
-                            self.listingData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
+                            self.listingData = ListingRspDTO.data.children.map {
+                                LinkState(link: $0.data, read:( $0.data.id != nil ? self.alreadyReadLinksIds.contains($0.data.id!) : false))
+                            }
                             self.after = ListingRspDTO.data.after
                             self.before = ListingRspDTO.data.before
                             guard let onSuccess = onSuccess else { return }
                             onSuccess(self.listingData)
-                        },
+                },
                           errorHandler: { (error) in
                             self.isFetchingData = false;
                             guard let onError = onError else { return }
@@ -64,12 +67,14 @@ class TopListPresenter : ListingPresenter {
                           after: self.after,
                           successHandler: { [unowned self] (ListingRspDTO) in
                             self.isFetchingData = false;
-                            let newData = ListingRspDTO.data.children.map {LinkState(link: $0.data, read: false)}
+                            let newData =  ListingRspDTO.data.children.map {
+                                LinkState(link: $0.data, read:( $0.data.id != nil ? self.alreadyReadLinksIds.contains($0.data.id!) : false))
+                            }
                             self.after = ListingRspDTO.data.after
                             self.listingData.append(contentsOf: newData)
                             guard let onSuccess = onSuccess else { return }
                             onSuccess(newData)
-                         },
+                },
                           errorHandler: { (error) in
                             self.isFetchingData = false;
                             guard let onError = onError else { return }
@@ -80,6 +85,7 @@ class TopListPresenter : ListingPresenter {
     public func markAsRead(linkItem: LinkState) {
         if let idx = listingData.firstIndex(where: { $0.link.id == linkItem.link.id }) {
             listingData[idx].read = true
+            alreadyReadLinksIds.insert(listingData[idx].link.id!)
         }
     }
     

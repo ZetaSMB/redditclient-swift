@@ -2854,6 +2854,38 @@
 			<key>uniqueIdentifier</key>
 			<string>B95F49FC-4A88-41E0-9374-B7E4EBAD5BF7</string>
 		</dict>
+		<key>BA18A917-4C99-4CCD-9516-12D64482A2C5</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BA18A917-4C99-4CCD-9516-12D64482A2C5.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>RedditClient project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>RedditClient</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build RedditClient</string>
+			<key>timeStartedRecording</key>
+			<real>585524668.58294702</real>
+			<key>timeStoppedRecording</key>
+			<real>585524670.91553605</real>
+			<key>title</key>
+			<string>Build RedditClient</string>
+			<key>uniqueIdentifier</key>
+			<string>BA18A917-4C99-4CCD-9516-12D64482A2C5</string>
+		</dict>
 		<key>BC77D8A5-2853-4061-835A-41BD59A49B0C</key>
 		<dict>
 			<key>className</key>
