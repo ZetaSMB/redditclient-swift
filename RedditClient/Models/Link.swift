@@ -16,6 +16,7 @@ struct Link : Codable {
     var createdDate: Date?
     var thumbnail: String?
     var numberOfComments: Int?
+    var fullSizedPictureUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "name"
@@ -24,5 +25,6 @@ struct Link : Codable {
         case createdDate = "created_utc"
         case thumbnail
         case numberOfComments = "num_comments"
+        case fullSizedPictureUrl = "url"
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailViewController: UIViewController {
 
@@ -32,6 +33,11 @@ class DetailViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func onImageTapped(_ sender: Any) {
+        guard let imageStrURL = detailItem?.link.fullSizedPictureUrl, let imageURL = URL(string : imageStrURL) else { return }
+        let safariVC = SFSafariViewController(url: imageURL)
+        navigationController?.present(safariVC, animated: true, completion: nil)
+    }
 }
 
