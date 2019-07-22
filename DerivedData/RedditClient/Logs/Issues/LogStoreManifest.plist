@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>8961A0B7-69A9-4E79-9B4E-C06B17DD782A</key>
+		<key>F627C8D1-B8D2-41BF-B6FB-D23ADD1A15A6</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>8961A0B7-69A9-4E79-9B4E-C06B17DD782A.xcactivitylog</string>
+			<string>F627C8D1-B8D2-41BF-B6FB-D23ADD1A15A6.xcactivitylog</string>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -24,13 +24,13 @@
 			<key>signature</key>
 			<string>RedditClient-cvxdgkffpfwtrwcxgumoawhaxlfi</string>
 			<key>timeStartedRecording</key>
-			<real>585351691.842381</real>
+			<real>585524421.055269</real>
 			<key>timeStoppedRecording</key>
-			<real>585351696.57042098</real>
+			<real>585524425.36206901</real>
 			<key>title</key>
 			<string>Build target RedditClient</string>
 			<key>uniqueIdentifier</key>
-			<string>8961A0B7-69A9-4E79-9B4E-C06B17DD782A</string>
+			<string>F627C8D1-B8D2-41BF-B6FB-D23ADD1A15A6</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

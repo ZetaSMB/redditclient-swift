@@ -27,7 +27,7 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        self.refresh(self)
+        refresh(self)
     }
     
     func configureTableView() {
@@ -57,9 +57,16 @@ class MasterViewController: UITableViewController {
     }
 
     private func dismissItem(_ item: LinkState) {
-        let idx = self.listingPresenter.removeFromList(linkItem: item)
+        let idx = listingPresenter.removeFromList(linkItem: item)
         if idx >= 0 {
-            self.tableView.deleteRows(at: [IndexPath(row: idx, section: 0) ], with: .left)
+            tableView.deleteRows(at: [IndexPath(row: idx, section: 0) ], with: .left)
+        }
+    }
+    
+    
+    @IBAction private func onDismissAllPressed(_ sender: Any) {
+        for aLink in listingPresenter.listingData {
+            dismissItem(aLink)
         }
     }
     
@@ -71,7 +78,7 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = listingPresenter.listingData[indexPath.row]
                 listingPresenter.markAsRead(linkItem: controller.detailItem!)
-                self.tableView.reloadRows(at: [indexPath], with: .none)
+                tableView.reloadRows(at: [indexPath], with: .none)
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

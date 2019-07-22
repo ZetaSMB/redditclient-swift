@@ -24,15 +24,16 @@ class TopListPresenter : ListingPresenter {
     
     fileprivate var after: String?
     fileprivate var before: String?
-    fileprivate var pageSize: Int? = 5
+    fileprivate var pageSize: Int? = 50
     
+
     private var redditAPIService: RDTAPIService!
     
     public init(_ redditAPIService: RDTAPIService ) {
          self.redditAPIService = redditAPIService
     }
     
-    func fetchData(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
+    public func fetchData(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
         isFetchingData = true;
         redditAPIService
             .fetchListing(by: RDTAPIListingType.top,
@@ -54,7 +55,7 @@ class TopListPresenter : ListingPresenter {
             })
     }
     
-    func loadMore(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
+    public func loadMore(onSuccess: (([LinkState]) -> ())?, onError: ((Error) -> ())?) {
         isFetchingData = true;
         redditAPIService
             .fetchListing(by: RDTAPIListingType.top,
@@ -76,22 +77,19 @@ class TopListPresenter : ListingPresenter {
             })
     }
     
-    func markAsRead(linkItem: LinkState) {
-        if let idx = listingData.firstIndex(where: { $0 == linkItem }) {
+    public func markAsRead(linkItem: LinkState) {
+        if let idx = listingData.firstIndex(where: { $0.link.id == linkItem.link.id }) {
             listingData[idx].read = true
         }
     }
     
-    func removeFromList(linkItem: LinkState) -> Int {
-        if let idx = listingData.firstIndex(where: { $0 == linkItem }) {
+    public func removeFromList(linkItem: LinkState) -> Int {
+        if let idx = listingData.firstIndex(where: { $0.link.id == linkItem.link.id }) {
             listingData.remove(at: idx)
             return idx
         }
         return -1
     }
-    
-    func removeAll() {
-        listingData = []
-    }
+
 }
 

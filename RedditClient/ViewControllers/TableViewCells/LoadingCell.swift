@@ -16,4 +16,5 @@ class LoadingCell: UITableViewCell {
     override func awakeFromNib() {
         self.activityIndicator.startAnimating()
     }
+        
 }

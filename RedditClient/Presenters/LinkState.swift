@@ -8,11 +8,7 @@
 
 import Foundation
 
-struct LinkState : Codable, Equatable {
-    static func == (lhs: LinkState, rhs: LinkState) -> Bool {
-        return lhs.link.id == rhs.link.id
-    }
-    
+struct LinkState : Codable{
     var link: Link
     var read: Bool = false    
 }
